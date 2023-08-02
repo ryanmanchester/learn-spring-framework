@@ -1,7 +1,5 @@
 package demo1.helloworld;
 
-import static org.junit.Assert.*;
-
 import org.junit.Assert;
 import org.junit.Test;
 
