@@ -8,13 +8,13 @@ import org.springframework.stereotype.Repository;
 
 import model.Person;
 
-@Repository
+@Repository("scrubDao")
 public class ScrubPersonDataAccess implements PersonDao {
 	private static List<Person> DB = new ArrayList<>();
 	
 	@Override
 	public int insertPerson(UUID id, Person person) {
 		DB.add(new Person(id, person.getName()));
-		return 0;
+		return 1;
 	}
 }
