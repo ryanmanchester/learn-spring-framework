@@ -1,8 +1,11 @@
 package service;
 
+import org.springframework.stereotype.Service;
+
 import dao.PersonDao;
 import model.Person;
 
+@Service
 public class PersonService {
 	private final PersonDao personDao;
 	
