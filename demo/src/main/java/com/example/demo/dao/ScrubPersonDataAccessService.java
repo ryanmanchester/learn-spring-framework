@@ -45,7 +45,14 @@ public class ScrubPersonDataAccessService implements PersonDao {
 		 
 		@Override
 		  public int updatePersonById(UUID id, Person person) {
-			 return 1;
+			 return selectPersonById(id).map(p -> {
+				 int indexOfPersonToUpdate = DB.indexOf(person);
+				 if(indexOfPersonToUpdate >= 0) {
+					 DB.set(indexOfPersonToUpdate, person);
+					 return 1;
+				 }
+				 return 0;
+			 }).orElse(0);
 		 }
 
 		
