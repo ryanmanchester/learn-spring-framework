@@ -16,13 +16,10 @@ public interface PersonDao {
 	}
 	 
 	 List<Person> selectAllPeople();
-	 Optional<Person> selectPersonById(UUID id);
-	
-	 default int deletePersonById(UUID id) {
-		 return 1;
-	 }
 	 
-	 default int updatePersonById(UUID id, Person person) {
-		 return 1;
-	 }
+	 Optional<Person> selectPersonById(UUID id);
+	 
+	 int deletePersonById(UUID id);
+	 int updatePersonById(UUID id, Person person);
+	 
 }

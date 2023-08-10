@@ -33,6 +33,22 @@ public class ScrubPersonDataAccessService implements PersonDao {
 					.findFirst();
 		}
 		
+		@Override
+		 public int deletePersonById(UUID id) {
+			 Optional<Person> personMaybe = selectPersonById(id);
+			 if(personMaybe.isEmpty()) {
+				 return 0;
+			 }
+			 DB.remove(personMaybe.get());
+			 return 1;
+		 }
+		 
+		@Override
+		  public int updatePersonById(UUID id, Person person) {
+			 return 1;
+		 }
+
+		
 		
 		
 }
