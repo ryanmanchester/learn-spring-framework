@@ -8,10 +8,10 @@ import com.ryanmanchester.learnspringframework.game.GameRunner;
 
 @Configuration
 @ComponentScan("com.ryanmanchester.learnspringframework.game")
-public class App03GamingSpringBeans {
+public class GamingAppLauncher {
 	
 	public static void main(String[] args) {
-		try(AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(App03GamingSpringBeans.class)) {
+		try(AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(GamingAppLauncher.class)) {
 			context.getBean(GameRunner.class).run();
 		}
 
