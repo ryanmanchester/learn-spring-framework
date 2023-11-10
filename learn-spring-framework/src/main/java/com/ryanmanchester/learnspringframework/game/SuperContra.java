@@ -1,5 +1,8 @@
 package com.ryanmanchester.learnspringframework.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class SuperContra implements GameInterface {
 
 	@Override
