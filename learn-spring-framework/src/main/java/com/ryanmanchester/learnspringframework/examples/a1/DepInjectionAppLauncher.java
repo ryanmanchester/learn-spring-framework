@@ -12,8 +12,6 @@ import org.springframework.stereotype.Component;
 class BusinessClass {
 	Dep1 dep1;
 	Dep2 dep2;
-	
-	@Autowired
 	public BusinessClass(Dep1 dep1, Dep2 dep2) {
 		System.out.println("Constructor injection");
 		this.dep1 = dep1;
