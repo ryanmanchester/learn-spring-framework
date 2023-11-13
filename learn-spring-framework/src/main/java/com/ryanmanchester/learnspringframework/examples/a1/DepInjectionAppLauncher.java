@@ -10,12 +10,26 @@ import org.springframework.stereotype.Component;
 
 @Component
 class BusinessClass {
-	
-	@Autowired
 	Dep1 dep1;
+	Dep2 dep2;
 	
 	@Autowired
-	Dep2 dep2;
+	public BusinessClass(Dep1 dep1, Dep2 dep2) {
+		System.out.println("Constructor injection");
+		this.dep1 = dep1;
+		this.dep2 = dep2;
+	}
+//	@Autowired
+//	public void setDep1(Dep1 dep1) {
+//		System.out.println("Setter injection - setDep1");
+//		this.dep1 = dep1;
+//	}
+//	
+//	@Autowired
+//	public void setDep2(Dep2 dep2) {
+//		System.out.println("Setter injection - setDep2");
+//		this.dep2 = dep2;
+//	}
 	
 	public String toString() {
 		return "Using: " +dep1 + " and " +dep2;
