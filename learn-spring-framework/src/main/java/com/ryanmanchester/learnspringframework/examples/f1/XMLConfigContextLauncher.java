@@ -5,14 +5,13 @@ import java.util.Arrays;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
-@Configuration
-@ComponentScan
 public class XMLConfigContextLauncher {
 	
 	public static void main(String[] args) {
-		try(AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(XMLConfigContextLauncher.class)) {
+		try(ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("contextConfiguration.xml")) {
 			Arrays.stream(context.getBeanDefinitionNames())
 				.forEach(System.out::println);
 			
